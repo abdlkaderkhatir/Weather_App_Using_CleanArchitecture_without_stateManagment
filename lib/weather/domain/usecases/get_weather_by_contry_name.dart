@@ -1,10 +1,10 @@
 
 
 import 'package:weather_app_with_clean/weather/domain/entities/weather.dart';
-import 'package:weather_app_with_clean/weather/domain/repository/weather_repository.dart';
+import 'package:weather_app_with_clean/weather/domain/repository/base_weather_repository.dart';
 
 class GetWeatherUseCase {
-  final WeatherRepository _weatherRepository;
+  final BaseWeatherRepository _weatherRepository;
 
   GetWeatherUseCase(this._weatherRepository);
 

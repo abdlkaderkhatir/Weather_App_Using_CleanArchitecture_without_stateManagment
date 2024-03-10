@@ -1,6 +1,4 @@
 
-import 'dart:convert';
-
 import 'package:weather_app_with_clean/core/utils/constances.dart';
 import 'package:weather_app_with_clean/weather/data/models/weather_model.dart';
 import 'package:dio/dio.dart';
@@ -16,8 +14,8 @@ class RemoteDataSource  implements BaseRemoteDataSource{
     try {
       var response = await Dio().get('${AppConstants.baseUrl}/weather?q=$city&appid=${AppConstants.apiKey}');
       print(response);
-      var JsonData =  json.decode(response.data);
-      return WeatherModel.fromJson(JsonData);
+      // var JsonData =  json.decode(response.data);
+      return WeatherModel.fromJson(response.data);
     } catch (e) {
       print(e);
       return null;
